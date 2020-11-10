@@ -1,0 +1,60 @@
+{"_comment": "Reto1"}
+
+{
+    "_comment": "Fecha, nombre y texto de cada comentario",
+    "project": {
+     "date": 1,
+     "name": 1,
+     "text": 1,
+     "_id": 0
+    }
+   }
+
+   {
+    "_comment": "Título, elenco y año de cada película",
+    "project": {
+     "title": 1,
+     "cast": 1,
+     "year": 1,
+     "_id": 0
+    }
+   }
+
+   {
+    "_comment": "Nombre y contraseña de cada usuario",
+    "project": {
+    "name": 1,
+    "password": 1,
+    "_id": 0
+    }
+   }
+
+
+   
+{"_comment": "Reto2"}
+
+{
+    "_comment": "comentarios hechos por Greg Powell",
+    "filter": {
+    "name": 'Greg Powell'
+    }
+   }
+
+
+   {
+    "_comment": "Comentarios hechos Greg Powell o Mercedes Tyler",
+    "filter": {
+     "$or": [
+      {
+       "name": 'Greg Powell'
+      },
+      {
+       "name": 'Mercedes Tyler'
+      }
+     ]
+    }
+   }
+
+
+Máximo número de comentarios en una película
+Título de las cinco películas más comentadas
