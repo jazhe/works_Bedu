@@ -36,25 +36,49 @@
 {
     "_comment": "comentarios hechos por Greg Powell",
     "filter": {
-    "name": 'Greg Powell'
+    "name": "Greg Powell"
     }
    }
 
 
-   {
-    "_comment": "Comentarios hechos Greg Powell o Mercedes Tyler",
-    "filter": {
-     "$or": [
-      {
-       "name": 'Greg Powell'
-      },
-      {
-       "name": 'Mercedes Tyler'
-      }
-     ]
-    }
+{
+   "_comment": "Comentarios hechos Greg Powell o Mercedes Tyler",
+   "filter": {
+    "$or": [
+        {
+            "name": "Greg Powell"
+        },
+        {
+            "name": "Mercedes Tyler"
+        }
+
+    ]    
    }
+}
 
+{
+    "_comment": "Máximo número de comentarios en una película",
+        "project": {
+            "num_mflix_comments": 1,
+            "_id": 0
+        },
+        "sort": {
+            "num_mflix_comments": -1
+        },
+        "limit": 1
+       
 
-Máximo número de comentarios en una película
-Título de las cinco películas más comentadas
+}
+
+{
+    "_comment":"Título de las cinco películas más comentadas",
+    "project": {
+        "title": 1,
+        "_id": 0
+    },
+        "sort": {
+            "num_mflix_comments": -1
+        },
+        "limit": 5
+
+}
