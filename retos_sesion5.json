@@ -10,7 +10,7 @@
 {
     "_comment":"Propiedades que admitan mascotas",
     "filter": {
-        "house_rules": "RegExp('pets', i)"
+         "house_rules": "RegExp('[^not] pets ', i)"
     }
 }
 
@@ -77,7 +77,7 @@
     [{"$match": {
         "amenities": {"$in": ["Wifi", "Ethernet"]}
         }}, {"$group": {
-        "_id": 0,
+        "_id": null,
         "suma_total": {
             "$sum": 1
         }
