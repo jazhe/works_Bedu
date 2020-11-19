@@ -10,7 +10,7 @@
 {
     "_comment":"Propiedades que admitan mascotas",
     "filter": {
-        "house_rules": "RegExp('no pets', i)"
+        "house_rules": "RegExp('pets', i)"
     }
 }
 
