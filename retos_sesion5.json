@@ -67,19 +67,3 @@
     "address.country": "Brazil"
     }
 }
-
-{"_comment": "Reto3"}
-
-{
-    "_comment":"Mediante el uso de agregaciones, 
-                encontrar el número de publicaciones que tienen conexión a Internet, 
-                sea desde Wifi o desde cable (Ethernet)"
-    [{"$match": {
-        "amenities": {"$in": ["Wifi", "Ethernet"]}
-        }}, {"$group": {
-        "_id": null,
-        "suma_total": {
-            "$sum": 1
-        }
-    }}]   
-}   

@@ -1,0 +1,68 @@
+{"_comment": "Reto1"}
+
+{
+    "_comment":"Mediante el uso de agregaciones, 
+                encontrar el número de publicaciones que tienen conexión a Internet, 
+                sea desde Wifi o desde cable (Ethernet)"
+    [{"$match": {
+        "amenities": {"$in": ["Wifi", "Ethernet"]}
+        }}, {"$group": {
+        "_id": null,
+        "suma_total": {
+            "$sum": 1
+        }
+    }}]   
+}   
+
+
+{"_comment": "Reto2"}
+
+[{"$match": {
+    "property_type": "House"
+  
+  }}, {"$match": {
+    "bedrooms":{"$gte": 1}
+  }}, {"$addFields": {
+    "costo_recamara": {
+      "$divide":["$price", "$bedrooms"]
+    }
+  }}, {"$group": {
+     "_id": "$address.country_code",
+      "total_recamara": {
+       "$sum": "$costo_recamara"
+    },
+    "count_recamaras": {
+       "$sum": 1
+    }
+  }}, {"$addFields": {
+      "costo_promedio": {
+       "$divide": ["$total_recamara", "$count_recamaras"]
+     }
+  }}, {"$project": {
+    "_id": 1,
+    "costo_promedio": 1
+  
+    }}]
+
+
+{"_comment": "Reto3"}
+
+    [{"$lookup": {
+        "from": 'users',
+        "localField": 'name',
+        "foreignField": 'name',
+        "as": 'user'
+      }}, {"$addFields": {
+        "usuario": {"$arrayElemAt": ["$user", 0]}
+      }}, {"$addFields": {
+        "user_pass": "$usuario.password"
+      }}, {"$project": {
+        "_id": 0,
+        "name": 1,
+        "email": 1,
+        "user_pass": 1,
+      
+        }}]
+
+
+{"_comment": "Reto4"}
