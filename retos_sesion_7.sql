@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS users(
 );
 
 /*Reto 1
+
 movie_id::Titulo::Generos*/
 CREATE TABLE IF NOT EXISTS movies(
     movie_id INT PRIMARY KEY,
